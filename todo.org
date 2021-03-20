@@ -1,0 +1,4 @@
+#+TITLE: Todo
+
+- [ ] Create the graph data model
+- [ ] Define the endpoints
