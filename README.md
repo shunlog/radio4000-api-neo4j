@@ -6,17 +6,31 @@ Check out the [todo](todo.org)
 
 ## Instructions
 
-Install the required pip packages
-
-`
+Install the required pip packages:
+```bash
 pip3 install -r requirements.txt
-`
+```
 
-Run the flask server
+Set the environment variables
 
-`
+Private variables go in `.env`:
+```bash
+NEO4J_USERNAME="neo4j"
+NEO4J_PASSWORD="password"
+NEO4J_BOLT_URL="bolt://${NEO4J_USERNAME}:${NEO4J_PASSWORD}@localhost:7687"
+```
+
+Public variables go in `.flaskenv`:
+```bash
+FLASK_APP="app.py"
+FLASK_ENV="development"
+FLASK_DEBUG=1
+```
+
+Run the flask server:
+```bash
 flask run
-`
+```
 
 ## Models
 
