@@ -70,6 +70,14 @@ This is the first **_prototype_**
 |---------|-----------|--------------------------------------------------------------------|
 | created | `integer` | timestamp from when the user was created. Example: `1481041965335` |
 
+#### Tag
+
+A `User` can tag his `Channel`s for better discoverability
+
+| name | type     | description     |
+|------|----------|-----------------|
+| name | `string` | name of the tag |
+
 ### Relations
 
 #### Channel -> Track :CONTAINS 
@@ -78,6 +86,11 @@ This is the first **_prototype_**
 |-------------|----------|-------------------------------------------------------------------------|
 | description | `string` | optional description to the track. Example: `"Post-Punk from USA (NY)"` |
     
+
+#### Channel <- Tag :TAGS
+| name | type | description |
+|------|------|-------------|
+|      |      |             |
 
 #### Track <- MediaProvider :PROVIDES
 
