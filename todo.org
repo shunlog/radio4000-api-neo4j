@@ -1,5 +1,14 @@
 #+TITLE: Todo
 
-- [ ] Import the data from firebase
-- [ ] Test different datamodels and figure out the best
+- [-] Import the data from firebase
+
+- [-] Decide on model
+
+  + One node per tag
+
+  + A derived node from base tag for each user
+    (:Channel)-[:CREATED]->(:ChannelTag)<-[:DERIVES]-(:Tag)
+
 - [ ] Define the endpoints
+
+- [ ] Code the api app
