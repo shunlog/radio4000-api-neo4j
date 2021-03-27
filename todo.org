@@ -1,5 +1,5 @@
 #+TITLE: Todo
 
-- [ ] Create the graph data model
-- [ ] Define the endpoints
 - [ ] Import the data from firebase
+- [ ] Test different datamodels and figure out the best
+- [ ] Define the endpoints
