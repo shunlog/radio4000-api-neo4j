@@ -66,8 +66,6 @@ Not final variant. The `url` property is still bothering.
 
 #### Tag
 
-A `User` can tag his `Channel`s for better discoverability
-
 | name | type     | description     |
 |------|----------|-----------------|
 | name | `string` | name of the tag |
