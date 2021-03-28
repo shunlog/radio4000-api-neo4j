@@ -72,7 +72,7 @@ A `User` can tag his `Channel`s for better discoverability
 |------|----------|-----------------|
 | name | `string` | name of the tag |
 
-### Relations
+### Relationships
 
 #### (Channel) -[LIKES]-> (Track)
 
