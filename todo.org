@@ -1,14 +1,21 @@
 #+TITLE: Todo
 
-- [-] Import the data from firebase
+* TODO Decide the model
 
-- [-] Decide on model
+** Tags
 
-  + One node per tag
+*** One node per tag
 
-  + A derived node from base tag for each user
-    (:Channel)-[:CREATED]->(:ChannelTag)<-[:DERIVES]-(:Tag)
+*** A derived node from base tag for each user
 
-- [ ] Define the endpoints
+(:Channel)-[:CREATED]->(:ChannelTag)<-[:DERIVES]-(:Tag)
 
-- [ ] Code the api app
+** MediaProvider
+
+*** A node for each (YT, discogs), relationships with a url property to tracks
+
+*** Just properties in tracks (ytid, discogs_id)
+
+* TODO Define the endpoints
+
+* TODO Code the api app
