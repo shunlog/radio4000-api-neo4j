@@ -34,7 +34,7 @@ flask run
 
 ## Models
 
-This is the first **_prototype_**
+Not final variant. The `url` property is still bothering.
 
 ### Overview
 
@@ -44,31 +44,25 @@ This is the first **_prototype_**
 
 #### Channel
 
-| name    | type      | description                                                                                                                    |
-|---------|-----------|--------------------------------------------------------------------------------------------------------------------------------|
-| title   | `string`  | title representing a radio channel. Example: `"Radio Oskar"`                                                                   |
-| body    | `string`  | description of the radio channel. Example: `"The channel of your wet dreams..."`                                               |
-| created | `integer` | timestamp describing when was this radio channel created. Example: `"1411213745028"`                                           |
-| image   | `string`  | the id for the cloudinary `image` model. Example: `"image": "drz0qs9lgscyfdztr17t".`                                           |
-| link    | `string`  | Custom URL describing the external homepage for a radio channel. Example: `"https://example.com"`                              |
-| slug    | `string`  | the unique URL representing this channel. Used for human readable urls Example: `"pirate-radio"` -> radio4000.com/pirate-radio |
-| updated | `integer` | timestamp when the radio was last updated. Example: `1498137205047`                                                            |
+| name        | type      | description                                                                                                                    |
+|-------------|-----------|--------------------------------------------------------------------------------------------------------------------------------|
+| slug        | `string`  | the unique URL representing this channel. Used for human readable urls Example: `"pirate-radio"` -> radio4000.com/pirate-radio |
+| title       | `string`  | title representing a radio channel. Example: `"Radio Oskar"`                                                                   |
+| body        | `string`  | description of the radio channel. Example: `"The channel of your wet dreams..."`                                               |
+| created     | `date`    | date describing when was this radio channel created                                                                            |
+| updated     | `date`    | date describing when was this radio channel updated                                                                            |
+| image       | `string`  | the id for the cloudinary `image` model. Example: `"image": "drz0qs9lgscyfdztr17t".`                                           |
+| is_featured | `bool`    | wheter this channel is shown on the 'featured' page                                                                            |
+| link        | `string`  | Custom URL describing the external homepage for a radio channel. Example: `"https://example.com"`                              |
 
 #### Track
 
-| name              | type        | description                                                                            |
-|-------------------|-------------|----------------------------------------------------------------------------------------|
-| title             | `string`    | required title of the track. Example: `"Lydia Lunch - This Side of Nowhere (1982)"`    |
-| created           | `integer`   | date timestamp from when the model is created                                          |
-| mediaNotAvailable | `boolean`   | is the current track media available, accessible to be consumed                        |
-| discogsUrl        | `string`    | the URL pointing to the Discogs release (or master) corresponding to this track media. |
-
-
-#### User
-
-| name    | type      | description                                                        |
-|---------|-----------|--------------------------------------------------------------------|
-| created | `integer` | timestamp from when the user was created. Example: `1481041965335` |
+| name              | type      | description                                                                            |
+|-------------------|-----------|----------------------------------------------------------------------------------------|
+| title             | `string`  | required title of the track. Example: `"Lydia Lunch - This Side of Nowhere (1982)"`    |
+| url               | `string`  | the URL pointing to the YouTube video of this track                                    |
+| mediaNotAvailable | `boolean` | is the current track media available, accessible to be consumed                        |
+| discogsUrl        | `string`  | the URL pointing to the Discogs release (or master) corresponding to this track media. |
 
 #### Tag
 
@@ -80,33 +74,19 @@ A `User` can tag his `Channel`s for better discoverability
 
 ### Relations
 
-#### Channel -> Track :CONTAINS 
+#### (Channel) -[LIKES]-> (Track)
 
-| name        | type     | description                                                             |
-|-------------|----------|-------------------------------------------------------------------------|
-| description | `string` | optional description to the track. Example: `"Post-Punk from USA (NY)"` |
+| name  | description                                                             |
+|-------|-------------------------------------------------------------------------|
+| likes | optional description to the track. Example: `"Post-Punk from USA (NY)"` |
     
 
-#### Channel <- Tag :TAGS
-| name | type | description |
-|------|------|-------------|
-|      |      |             |
+#### (Track) -(TAGGED)-> (Tag)
 
-#### Track <- MediaProvider :PROVIDES
-
-| name     | type     | description                  |
-|----------|----------|------------------------------|
-| uri      | `string` | provider id of a track media |
-
-#### User -> Channel :CREATED
-
-| name    | type      | description                                |
-|---------|-----------|--------------------------------------------|
-| date    | `integer` | timestamp to when the relation was created |
+| name    | description                             |
+|---------|-----------------------------------------|
+| channel | id of the channel that tagged the track |
 
 
-#### User -> Channel :FOLLOWS
+#### (Channel) -[FOLLOWS]-> (Channel)
 
-| name | type | description |
-|------|------|-------------|
-|      |      |             |

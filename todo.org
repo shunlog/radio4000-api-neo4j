@@ -12,17 +12,7 @@
   + Tags overall
 - Get recommended channels for a channel
 
-
-
-** Tags
-
-*** One node per tag
-
-*** A derived node from base tag for each user
-
-(:Channel)-[:CREATED]->(:ChannelTag)<-[:DERIVES]-(:Tag)
-
-** MediaProvider
+** Choose media provider representation
 
 *** A node for each (YT, discogs), relationships with a url property to tracks
 
