@@ -76,16 +76,15 @@ A `User` can tag his `Channel`s for better discoverability
 
 #### (Channel) -[LIKES]-> (Track)
 
-| name  | description                                                             |
-|-------|-------------------------------------------------------------------------|
-| likes | optional description to the track. Example: `"Post-Punk from USA (NY)"` |
-    
+| property | type     | description                                                             |
+|----------|----------|-------------------------------------------------------------------------|
+| body     | `string` | optional description to the track. Example: `"Post-Punk from USA (NY)"` |
 
 #### (Track) -(TAGGED)-> (Tag)
 
-| name    | description                             |
-|---------|-----------------------------------------|
-| channel | id of the channel that tagged the track |
+| property | type     | description                             |
+|----------|----------|-----------------------------------------|
+| channel  | `string` | unique id of the channel that tagged the track |
 
 
 #### (Channel) -[FOLLOWS]-> (Channel)
