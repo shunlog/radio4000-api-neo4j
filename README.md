@@ -77,6 +77,8 @@ Not final variant. The `url` property is still bothering.
 | property | type     | description                                                             |
 |----------|----------|-------------------------------------------------------------------------|
 | body     | `string` | optional description to the track. Example: `"Post-Punk from USA (NY)"` |
+| date     | `date`   | date when the channel liked the track                                   |
+
 
 #### (Track) -(TAGGED)-> (Tag)
 
