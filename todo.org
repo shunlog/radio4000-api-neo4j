@@ -2,6 +2,18 @@
 
 * TODO Decide the model
 
+** TODO Test the following operations
+
+- Get latest tracks a channel liked
+- Get all tracks a channel liked
+- Get all the channels a channel favorited
+- Get information about a track
+  + Tags of the current user
+  + Tags overall
+- Get recommended channels for a channel
+
+
+
 ** Tags
 
 *** One node per tag
